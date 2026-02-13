@@ -56,10 +56,10 @@ def webServer(port=13331):
 
       # Fill in start
         #response = outputdata + filedata
-        connectionSocket.send(outputdata)
+      connectionSocket.send(outputdata)
       # Fill in end
         
-        connectionSocket.close() #closing the connection socket
+      connectionSocket.close() #closing the connection socket
       
     except Exception as e:
       # Send response message for invalid request due to the file not being found (404)
@@ -75,7 +75,7 @@ def webServer(port=13331):
 
       #Close client socket
       #Fill in start
-      clientSocket.close()
+    clientSocket.close()
       #Fill in end
 
   # Commenting out the below (some use it for local testing). It is not required for Gradescope, and some students have moved it erroneously in the While loop. 
@@ -85,6 +85,7 @@ def webServer(port=13331):
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
