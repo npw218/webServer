@@ -38,9 +38,9 @@ def webServer(port=13331):
       header += b"Server: SimplePythonServer\r\n"
       header += b"Connection: close\r\n"
       header += b"Content-Type: text/html; charset=UTF-8\r\n"
-      header += b"\r\n"        
+         
       #Content-Type is an example on how to send a header as bytes. There are more!
-      outputdata = header + b"Content-Type: text/html; charset=UTF-8\r\n"
+      outputdata = header + b"\r\n"
      
 
 
@@ -85,6 +85,7 @@ def webServer(port=13331):
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
