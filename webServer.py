@@ -28,7 +28,7 @@ def webServer(port=13331):
       #opens the client requested file. 
       #Plenty of guidance online on how to open and read a file in python. How should you read it though if you plan on sending it through a socket?
       f = open(filename[1:], "rb")  
-      f.read()#fill in start              #fill in end   )
+      #filedata = f.read()#fill in start              #fill in end   )
       
       
 
@@ -37,7 +37,7 @@ def webServer(port=13331):
       header = b"HTTP/1.1 200 OK\r\n"        
       #Content-Type is an example on how to send a header as bytes. There are more!
       outputdata = header + b"Content-Type: text/html; charset=UTF-8\r\n"
-      outputdata = header += b"\r\n"
+     
 
 
       #Note that a complete header must end with a blank line, creating the four-byte sequence "\r\n\r\n" Refer to https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/TCPSockets.html
@@ -51,7 +51,7 @@ def webServer(port=13331):
       #Send everything as one send command, do not send one line/item at a time!
 
       # Fill in start
-
+        #response = outputdata + filedata
         connectionSocket.send(outputdata)
       # Fill in end
         
@@ -71,7 +71,7 @@ def webServer(port=13331):
 
       #Close client socket
       #Fill in start
-      connectionSocket.close()
+      clientSocket.close()
       #Fill in end
 
   # Commenting out the below (some use it for local testing). It is not required for Gradescope, and some students have moved it erroneously in the While loop. 
@@ -81,6 +81,7 @@ def webServer(port=13331):
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
