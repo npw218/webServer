@@ -18,7 +18,7 @@ def webServer(port=13331):
   while True:
     #Establish the connection
     
-    print('Ready to serve...')
+    #print('Ready to serve...')
     connectionSocket, addr = serverSocket.accept()#Fill in start -are you accepting connections?     #Fill in end
     
     try:
@@ -85,6 +85,7 @@ def webServer(port=13331):
 
 if __name__ == "__main__":
   webServer(13331)
+
 
 
 
